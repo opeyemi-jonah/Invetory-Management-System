@@ -1,4 +1,4 @@
-class Customers:
+class Customer:
     def __init__(self, customer_id=0, name="", contact=("", "")):
         self.__customer_id = customer_id
         self.__name = name
@@ -29,11 +29,15 @@ class Customers:
     name = property(get_name, set_name)
     contact = property(get_contact, set_contact)
 
-# Usage example
-customer = Customers(1, "John Doe", ("john@example.com", "123-456-7890"))
-print(customer.get_customer_id())  # 1
-print(customer.get_name())  # John Doe
-print(customer.get_contact())  # ('john@example.com', '123-456-7890')
+def test_usage():
+    # Usage example
+    customer = Customer(1, "John Doe", ("john@example.com", "123-456-7890"))
+    print(customer.get_customer_id())  # 1
+    print(customer.get_name())  # John Doe
+    print(customer.get_contact())  # ('john@example.com', '123-456-7890')
 
-customer.set_name("Jane Doe")
-print(customer.get_name())  # Jane Doe
+    customer.set_name("Jane Doe")
+    print(customer.get_name())  # Jane Doe
+
+if __name__ == "__main__":
+    test_usage()
