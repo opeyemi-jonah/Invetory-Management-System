@@ -1,9 +1,10 @@
 class Order:
-    def __init__(self, order_id, customer_name, products, total_price=0.0):
+    def __init__(self, order_id, customer_name, products, total_price=0.0, order_date = ""):
         self.__order_id = order_id
         self.__customer_name = customer_name
         self.__products = products  # List of dictionaries with product_id and quantity
         self.__total_price = total_price
+        self.__order_date = order_date
 
     # Accessor methods (getters)
     def get_order_id(self):
@@ -17,6 +18,9 @@ class Order:
 
     def get_total_price(self):
         return self.__total_price
+    
+    def get_order_date(self):
+        return self.__order_date
 
     # Mutator methods (setters)
     def set_order_id(self, order_id):
@@ -30,12 +34,15 @@ class Order:
 
     def set_total_price(self, total_price):
         self.__total_price = total_price
+    def set_order_date(self, order_date):
+        self.__order_date = order_date
 
     # Properties for accessors and mutators
     order_id = property(get_order_id, set_order_id)
     customer_name = property(get_customer_name, set_customer_name)
     products = property(get_products, set_products)
     total_price = property(get_total_price, set_total_price)
+    order_date = property(get_order_date, set_order_date)
 
     # Method to calculate total price based on products list
     def calculate_total_price(self, product_prices):

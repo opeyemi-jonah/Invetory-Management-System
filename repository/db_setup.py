@@ -18,7 +18,7 @@ def create_tables():
     # Create Customers table
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS customers (
-        customer_id TEXT PRIMARY KEY,
+        customer_id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
         contact TEXT
     )
